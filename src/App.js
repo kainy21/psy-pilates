@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import styled from '@emotion/styled';
+import Header from './components/Header';
+import Menu from './components/Menu';
+import Home from './pages/Home';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <BG className="App">
+        <Header />
+        <Routes>
+          <Route path="/about" />
+          <Route path="/program" />
+          <Route path="/community" />
+          <Route path="/qna" />
+          <Route path="/map" />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BG>
+    </Router>
   );
 }
 
-export default App;
+const BG = styled.div`
+  margin: 0;
+  padding: 5vw;
+  // background-color: #282c34;
+  background-color: #232323;
+  width: 100vw;
+  height: 100vh;
+`;
