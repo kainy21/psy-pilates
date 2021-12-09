@@ -1,9 +1,18 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 export default function Services() {
+  const [scrollHeight, setScrollHeight] = useState();
+
+  const SectionRef = useRef();
+  useEffect(() => {
+    setScrollHeight(document.getElementsByClassName('section')[2].scrollTop);
+  }, []);
+
+  console.log('scrollHeight--', scrollHeight);
+
   return (
-    <Section>
+    <Section ref={SectionRef} className="section">
       <Main className="subpage">
         <h1>2. Services</h1>
       </Main>
@@ -23,6 +32,7 @@ export default function Services() {
   );
 }
 const Section = styled.section`
+  border-color: green;
   height: 450vh;
 `;
 

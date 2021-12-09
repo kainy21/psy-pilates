@@ -20,7 +20,6 @@ code {
 section {
   background-position: center;
   background-size: cover;
-  box-sizing: border-box;
   border: solid 1px red;
   border-radius: 13px;
   height: 100vh;
@@ -29,7 +28,8 @@ section {
   /* background-image: url('../public/sample/bg1.jpg'); */
 }
 
-div {
+div,
+section {
   box-sizing: border-box;
 }
 
@@ -38,8 +38,14 @@ div {
   background-size: cover;
   border-radius: 13px;
   position: absolute;
+
   overflow: hidden;
   width: 94vw;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
 }
 
 .subtitle {
